@@ -207,7 +207,7 @@ export default class Plugin implements OmeggaPlugin<Config, Storage> {
       }
       if(action === "wipe"){
         if(args[1] !== "supermonkey99"){
-          this.omegga.whisper(name, `<color="ff3333">Type <code>/wipe supermonkey99</><color="ff3333"> to clear all queued commands.</>`);
+          this.omegga.whisper(name, `<color="ff3333">Type <code>/mq wipe supermonkey99</><color="ff3333"> to clear all queued commands.</>`);
           return
         }
         this.omegga.whisper(name, `[<color="60d3ff">mq</>] - Wiped all stored queues.`);
