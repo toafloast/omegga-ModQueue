@@ -1,0 +1,115 @@
+{
+  "name": "ModQueue",
+  "description": "Allows you to queue actions on users.",
+  "author": "crazey",
+  "config": {   
+    "limit": {
+      "description": "The maximum number of actions a player can have queued. Removes oldest to make room for new actions.",
+      "default": 8,
+      "type": "number"
+    },
+    "remove-after": {
+      "description": "Automatically removes actions older than the time specified in days. Set to 0 to disable.",
+      "default": 0,
+      "type": "number"
+    },
+    "permission-based": {
+      "description": "Can queue actions based on permissions (banning, role-granting).",
+      "type": "boolean",
+      "default": "true"
+    },
+    "can-queue": {
+      "description": "The specified role can queue.",
+      "type": "role",
+      "default": "Admin"
+    }},
+  "commands": [
+    {
+      "name": "/mq",
+      "description": "Displays usage info about ModQueue",
+      "example": "/mq role onLeave Skill4Life Quitter",
+      "args": [{
+        "name": "role/ban/clear",
+        "description": "Available actions.",
+        "required": false
+      },
+      {
+        "name": "onJoin/onLeave",
+        "description": "When to apply this action.",
+        "required": false
+      }]
+    },
+    {
+      "name": "/mq role",
+      "description": "Will grant a player a specified role when specified event occurs.",
+      "example": "/mq role onJoin grant crazey Admin",
+      "args": [
+        {
+          "name": "onJoin/onLeave",
+          "description": "When to apply this action.",
+          "required": true
+        },
+        {
+          "name": "grant/revoke",
+          "description": "Give role? Remove role?",
+          "required": true
+        },
+        {
+        "name": "target",
+        "description": "Who are you giving the role to?",
+        "required": true
+        },
+        {
+        "name": "role",
+        "description": "Gives target this role.",
+        "required": true
+        }]
+    },
+    {
+      "name": "/mq ban",
+      "description": "Bans a player when the specified event occurs, in minutes.",
+      "example": "/mq ban onLeave edz 60",
+      "args": [{
+        "name": "onJoin/onLeave",
+        "description": "When to apply this action.",
+        "required": true
+        },
+        {
+        "name": "target",
+        "description": "Who are you banning?",
+        "required": true
+      },
+      {
+        "name": "duration",
+        "description": "How long (in minutes) to ban them for?",
+        "required": true
+      }]
+    },
+    {
+      "name": "/mq clear player",
+      "description": "Clears queue of specified player.",
+      "example": "/mq clear crazey",
+      "args": [{
+        "name": "target",
+        "description": "Who's queue are you clearing?",
+        "required": true
+      }]
+    },
+    {
+      "name": "/mq wipe",
+      "description": "Clears all queues.",
+      "example": "/mq wipe",
+      "args": []
+    },
+    {
+      "name": "/mq list",
+      "description": "Displays all stored names. Specify a player for detailed info.",
+      "example": "/mq list crazey",
+      "args": [{
+        "name": "target",
+        "description": "Check this person's queues.",
+        "required": true
+      }]
+    }
+  ]
+}
