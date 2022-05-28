@@ -122,14 +122,14 @@ export default class Plugin implements OmeggaPlugin<Config, Storage> {
       return
     }
     if(!target){
-      this.omegga.whisper(name, `<code>/mq ban [onJoin/onLeave] </>[target] [duration] (reason?)</>`);
+      this.omegga.whisper(name, `<code>/mq ban </><color="99ff99">[${event}] </>[target] [duration] (reason?)</>`);
       return
     }
     if(this.omegga.findPlayerByName(target)){
       target = this.omegga.findPlayerByName(target).name;
     }
     if(!duration){
-      this.omegga.whisper(name, `<code>/mq ban [onJoin/onLeave] [target] </>[duration] (reason?)</>`);
+      this.omegga.whisper(name, `<code>/mq ban </><color="99ff99">[${event}] </><color="ff9999">[${target}]</> </>[duration] (reason?)</>`);
       return
     }
     this.omegga.broadcast(`<color="60d3ff">[mq - ${name}]</> <color="ffffff">Queued ban [<color="99ff99">${event}</>, <color="ff9999">${target}</>, <color="9999ff">${duration}</> minutes - ''<color="ffff99">${reason}</>'']`);

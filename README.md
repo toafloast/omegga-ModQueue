@@ -3,13 +3,13 @@
 When uploading your plugin to github/gitlab
 start your repo name with "omegga-"
 
-example: https://github.com//omegga-QueueRole
+example: https://github.com//omegga-ModQueue
 
-Your plugin will be installed via omegga install gh:/QueueRole
+Your plugin will be installed via omegga install gh:toafloast/ModQueue
 
 -->
 
-# QueueRole
+# ModQueue
 
 A typed safe plugin for [omegga](https://github.com/brickadia-community/omegga).
 
@@ -20,10 +20,11 @@ remove it entirely if it is unnecessary.
 
 ## Install
 
-`omegga install gh:/QueueRole`
-
-_TODO: more steps...?_
+`omegga install gh:toafloast/ModQueue`
 
 ## Usage
 
-_TODO: include some usage information_
+Don't forget to check out the configuration settings.
+
+Type `/mq` to see more info.
+`/mq [role/ban] [onJoin/onLeave]`
